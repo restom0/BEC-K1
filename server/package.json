@@ -9,9 +9,6 @@
     "watch": "node-sass --watch src/resources/scss/app.scss src/public/css/app.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "engines": {
-    "node":"20.x"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/restom0/nodejs_blog.git"
