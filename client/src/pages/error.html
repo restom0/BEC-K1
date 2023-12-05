@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="../../assets/hcmut.png" />
+    <title>Error</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="../../dist/output.css" rel="stylesheet" />
+  </head>
+
+  <body class="min-w-[375px]">
+    <div
+      class="m-auto mt-20 flex h-80 w-2/3 flex-col justify-between sm:flex-row sm:space-x-10 xl:w-1/2"
+    >
+      <div class="flex flex-col space-y-5 max-sm:mb-10">
+        <img src="../../assets/ssps.png" class="mb-3 w-28" />
+        <p id="error-code" class="text-3xl font-bold">400</p>
+        <p id="error-description" class="">
+          An SSL error has occurred and a secure connection cannot be made.
+        </p>
+        <p>
+          If this problem persists, please report it to your administrator or to
+          <a href="mailto:ssps@hcmut.edu.vn" class="underline"
+            >ssps@hcmut.edu.vn</a
+          >
+          and mention your error code and what caused it. We are sorry for the
+          inconvenience.
+        </p>
+        <p>
+          Nếu vấn đề này còn tiếp diễn, vui lòng thông báo tới quản trị viên
+          hoặc tới
+          <a href="mailto:ssps@hcmut.edu.vn" class="underline"
+            >ssps@hcmut.edu.vn</a
+          >
+          cùng với mã lỗi và lí do xảy ra. Chúng tôi xin lỗi vì sự cố này.
+        </p>
+        <a href="home.html" class="underline">Go home/Quay về trang chủ</a>
+        <button
+          onclick="localStorage.clear();window.location.href = 'login.html';"
+          class="w-fit underline"
+        >
+          Log out/Đăng xuất
+        </button>
+      </div>
+      <div class="w-full shrink-0 sm:w-40">
+        <img src="../../assets/cat.jpg" class="" />
+      </div>
+    </div>
+    <script>
+      const param = new URLSearchParams(window.location.search);
+      const num = param.get('num');
+      const msg = param.get('msg');
+      console.log(num, msg);
+      document.getElementById('error-code').innerHTML = num;
+      document.getElementById('error-description').innerHTML = msg;
+    </script>
+  </body>
+</html>

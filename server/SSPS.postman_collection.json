@@ -1,0 +1,710 @@
+{
+	"info": {
+		"_postman_id": "9f333fa2-af63-4a50-8b4a-40efd1f17d94",
+		"name": "SSPS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26858711"
+	},
+	"item": [
+		{
+			"name": "change password",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imtob2EudHJhbjE4MDVAaGNtdXQuZWR1LnZuIiwiX2lkIjoiNjU1MTk3NWVlMTJlZDRhYzg2YTg1ZjRjIiwiaWF0IjoxNjk5ODg2ODE2LCJleHAiOjE3MDA0OTE2MTZ9.dTJcBH5WFn5Uik-mgbAGk7OZDUXA-oktXRbe2paDAP0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"oldPassword\":\"khoadeptrai\",\r\n    \"newPassword\":\"khoadeptraii\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/account/change-password",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"account",
+						"change-password"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"student@hcmut.edu.vn\",\r\n    \"password\":\"khoadeptrai\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/account/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"account",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "increase self's credit",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN0dWRlbnRAaGNtdXQuZWR1LnZuIiwiX2lkIjoiNjU1ZjEyNjEwNTZhNjNiNjBiYWZhODk3IiwiaWF0IjoxNzAwNzI5NDgyLCJleHAiOjE3MDEzMzQyODJ9.5GVuyb1qAA-jfyCCdRDEUUvz1wGmFVKdgYtS8rO-SAc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"increment\":\"5\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/account/buy-credit",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"account",
+						"buy-credit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signup site for spso",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"spso@gmail.com\",\r\n    \"password\":\"khoadeptrai\",\r\n    \"name\":\"Tran Anh Khoa\",\r\n    \"profile_image\":\"profile image link\",\r\n    \"phone_number\":\"0703095933\",\r\n    \"spso_ID\":\"1111111\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/spso/signup",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"spso",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signup site for staff",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"staff@gmail.com\",\r\n    \"password\":\"khoadeptrai\",\r\n    \"name\":\"Tran Anh Khoa\",\r\n    \"profile_image\":\"profile image link\",\r\n    \"phone_number\":\"0703095933\",\r\n    \"staff_ID\":\"2222222\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/staff/signup",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"staff",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signup site for student",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"student@hcmut.edu.vn\",\r\n    \"password\":\"khoadeptrai\",\r\n    \"name\":\"Tran Anh Khoa\",\r\n    \"profile_image\":\"profile image link\",\r\n    \"phone_number\":\"0703095933\",\r\n    \"student_ID\":\"2113773\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/student/signup",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"student",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "(SPSO only): get printer by printer_id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRha2hvYTE4MDVAZ21haWwuY29tIiwiX2lkIjoiNjU1MTk2N2Q5MThiOWE1NTFhZDEwMjRhIiwiaWF0IjoxNjk5OTM4MjgyLCJleHAiOjE3MDA1NDMwODJ9.zu1KMV3ZsEs-O4PxH-wmBt9LBFoMcy0TM2Q2coFUZk8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/spso/printer/654fa05997b0137327582308",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"spso",
+						"printer",
+						"654fa05997b0137327582308"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "(SPSO only): add printer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNwc29AZ21haWwuY29tIiwiX2lkIjoiNjU1ZjEyMzIwNTZhNjNiNjBiYWZhODg5IiwiaWF0IjoxNzAwNzk2MjE5LCJleHAiOjE3MDE0MDEwMTl9.soN9lN8fCE9Hk7-2XKwlpG510WRZ-rDxIpCatC_UFLk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"brand\":\"Cannon\",\r\n    \"model\":\"unknown\",\r\n    \"shortDescription\":\"Running just fine\",\r\n    \"location\":\"H3-101\",\r\n    \"printerStatus\":\"true\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/spso/printer",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"spso",
+						"printer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "(SPSO only): change printer's status",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRha2hvYTE4MDVAZ21haWwuY29tIiwiX2lkIjoiNjU1MTk2N2Q5MThiOWE1NTFhZDEwMjRhIiwiaWF0IjoxNjk5OTM4MjgyLCJleHAiOjE3MDA1NDMwODJ9.zu1KMV3ZsEs-O4PxH-wmBt9LBFoMcy0TM2Q2coFUZk8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status\":\"false\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/spso/printer/654fa05997b0137327582308",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"spso",
+						"printer",
+						"654fa05997b0137327582308"
+					]
+				},
+				"description": "true or false value only"
+			},
+			"response": []
+		},
+		{
+			"name": "(SPSO only): delete printer by printer_id",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRha2hvYTE4MDVAZ21haWwuY29tIiwiX2lkIjoiNjU1MTk2N2Q5MThiOWE1NTFhZDEwMjRhIiwiaWF0IjoxNjk5OTM4MjgyLCJleHAiOjE3MDA1NDMwODJ9.zu1KMV3ZsEs-O4PxH-wmBt9LBFoMcy0TM2Q2coFUZk8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/spso/printer/655308bb4a3a6f7dede2d589",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"spso",
+						"printer",
+						"655308bb4a3a6f7dede2d589"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "(SPSO only): get all student information",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRha2hvYTE4MDVAZ21haWwuY29tIiwiX2lkIjoiNjU1MTk2N2Q5MThiOWE1NTFhZDEwMjRhIiwiaWF0IjoxNjk5OTM4MjgyLCJleHAiOjE3MDA1NDMwODJ9.zu1KMV3ZsEs-O4PxH-wmBt9LBFoMcy0TM2Q2coFUZk8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/spso/student/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"spso",
+						"student",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "(SPSO only): get student information by student id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRha2hvYTE4MDVAZ21haWwuY29tIiwiX2lkIjoiNjU1MTk2N2Q5MThiOWE1NTFhZDEwMjRhIiwiaWF0IjoxNjk5OTM4MjgyLCJleHAiOjE3MDA1NDMwODJ9.zu1KMV3ZsEs-O4PxH-wmBt9LBFoMcy0TM2Q2coFUZk8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/spso/student/2113773",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"spso",
+						"student",
+						"2113773"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "(SPSO only): get all staff information",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRha2hvYTE4MDVAZ21haWwuY29tIiwiX2lkIjoiNjU1MTk2N2Q5MThiOWE1NTFhZDEwMjRhIiwiaWF0IjoxNjk5OTM4MjgyLCJleHAiOjE3MDA1NDMwODJ9.zu1KMV3ZsEs-O4PxH-wmBt9LBFoMcy0TM2Q2coFUZk8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/spso/staff/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"spso",
+						"staff",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "(SPSO only): get staff information by staff id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRha2hvYTE4MDVAZ21haWwuY29tIiwiX2lkIjoiNjU1MTk2N2Q5MThiOWE1NTFhZDEwMjRhIiwiaWF0IjoxNjk5OTM4MjgyLCJleHAiOjE3MDA1NDMwODJ9.zu1KMV3ZsEs-O4PxH-wmBt9LBFoMcy0TM2Q2coFUZk8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/spso/staff/2113773",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"spso",
+						"staff",
+						"2113773"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "(SPSO only): set default page of every account",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRha2hvYTE4MDVAZ21haWwuY29tIiwiX2lkIjoiNjU1MGJlM2QzZTI1N2FmNGZiNDFmMTFmIiwiaWF0IjoxNjk5ODAwNjAxLCJleHAiOjE3MDA0MDU0MDF9.r2F3zodVOqQbzPU94rZNWzYI_6J7xXHf3AEpH7YRMKM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"amount\":5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/spso/set-default-pages",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"spso",
+						"set-default-pages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "(SPSO only) Get all printorders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/spso/all-orders",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"spso",
+						"all-orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "(SPSO only) Get one user's printorders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/spso/printorders/655f1261056a63b60bafa897",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"spso",
+						"printorders",
+						"655f1261056a63b60bafa897"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "(staff & SPSO only) Get all print order in queue of a printer",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"printer_id\":\"6560174d32c3b94c3911986f\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/queue/all",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"queue",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "(staff only) Print Next File In Queue",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"printer_id\":\"6560174d32c3b94c3911986f\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/queue/next",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"queue",
+						"next"
+					]
+				},
+				"description": "Lấy thông tin file tiếp theo, đồng thời xóa printorder này ra khỏi queue của máy in hiện tại, xác định status in hoàn tất"
+			},
+			"response": []
+		},
+		{
+			"name": "Create new print order",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNwc29AZ21haWwuY29tIiwiX2lkIjoiNjU1ZjEyMzIwNTZhNjNiNjBiYWZhODg5IiwiaWF0IjoxNzAwNzk2MjE5LCJleHAiOjE3MDE0MDEwMTl9.soN9lN8fCE9Hk7-2XKwlpG510WRZ-rDxIpCatC_UFLk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"printer\":\"6560174d32c3b94c3911986f\",\r\n    \"note\":\"some note\",\r\n    \"fileName\":\"khoa.pdf\",\r\n    \"printProperties\":{\r\n        \"paperSize\":\"a4\",\r\n        \"numberOfPages\":\"4\",\r\n        \"sided\":\"true\",\r\n        \"copies\":\"2\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/printorder/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"printorder",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload file",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "printFile",
+							"type": "file",
+							"src": "/C:/Users/takho/Downloads/report-mẫu.pdf"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/printorder/upload/65605142b7c29a6c8eb456a3",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"printorder",
+						"upload",
+						"65605142b7c29a6c8eb456a3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get self's printorders",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN0dWRlbnRAaGNtdXQuZWR1LnZuIiwiX2lkIjoiNjU1ZjEyNjEwNTZhNjNiNjBiYWZhODk3IiwiaWF0IjoxNzAxMjIxNzg0LCJleHAiOjE3MDE4MjY1ODR9.SyDfh5S1J4uCom1D8Owc685OetTMHJ09Q3kwL6zCAI4",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/account/printorders",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"account",
+						"printorders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get one's printorder with printorder_id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/account/printorders/656016cd32c3b94c39119841",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"account",
+						"printorders",
+						"656016cd32c3b94c39119841"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all printer",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRha2hvYTE4MDVAZ21haWwuY29tIiwiX2lkIjoiNjU1MDU0ZWNiMzE4ZjIwYTU0Nzc2OWUxIiwiaWF0IjoxNzAwNTUzOTc1LCJleHAiOjE3MDExNTg3NzV9.S-V8DkUiFhgvJU1cdnUfyNeo0F7IixBQovo9cLH99fc",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/spso/printer/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"spso",
+						"printer",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get self's info",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN0dWRlbnRAaGNtdXQuZWR1LnZuIiwiX2lkIjoiNjU2OTdmYWExZTRiZTQ1NDU3YTI0M2ViIiwiaWF0IjoxNzAxNDEyNzgzLCJleHAiOjE3MDIwMTc1ODN9.WnTFewMHxy8H8qBtZf_nRPJMC7Rrhyic3pSoyFovq_I",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/account/self",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"account",
+						"self"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

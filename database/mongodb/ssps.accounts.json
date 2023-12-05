@@ -1,0 +1,42 @@
+[{
+  "_id": {
+    "$oid": "656da394aff97f83806bb2b2"
+  },
+  "email": "spso@gmail.com",
+  "password": "$2b$10$S5IsSX68Q2LlFizHgCCmDORZU.ozTxNV2Xh9AhwmTK0AVWngExPy2",
+  "name": "SPSO",
+  "role": "spso",
+  "profile_image": "<profile_image_link>",
+  "phone_number": "0123456789",
+  "credit": 0,
+  "salt": "$2b$10$S5IsSX68Q2LlFizHgCCmDO",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "656da397aff97f83806bb2b9"
+  },
+  "email": "staff@gmail.com",
+  "password": "$2b$10$oLvj7c19yQMIk1PdKwytJedZwem/w/u2MLbxDUklPdnSxxGcLQime",
+  "name": "Staff",
+  "role": "staff",
+  "profile_image": "<profile_image_link>",
+  "phone_number": "0123456789",
+  "credit": 0,
+  "salt": "$2b$10$oLvj7c19yQMIk1PdKwytJe",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "656da399aff97f83806bb2c0"
+  },
+  "email": "student@hcmut.edu.vn",
+  "password": "$2b$10$wNRuNDdY9RbZ7JUinsxDpeTESEvZbWTzK9ywhFThrHg0ksl95ZtPC",
+  "name": "Student",
+  "role": "student",
+  "profile_image": "<profile_image_link>",
+  "phone_number": "0123456789",
+  "credit": 0,
+  "salt": "$2b$10$wNRuNDdY9RbZ7JUinsxDpe",
+  "__v": 0
+}]

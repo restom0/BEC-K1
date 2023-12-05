@@ -1,0 +1,32 @@
+[{
+  "_id": {
+    "$oid": "656da536aff97f83806bb2c8"
+  },
+  "brand": "Canon",
+  "model": "MAXIFY GX5070",
+  "shortDescription": "Print Speed (A4, ISO): up to 24 / 15.5 ipm",
+  "location": "H1-111",
+  "printerStatus": true,
+  "permittedFileType": [
+    "pdf",
+    "doc",
+    "docx"
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "656da557aff97f83806bb2cf"
+  },
+  "brand": "Canon",
+  "model": "MAXIFY GX4070",
+  "shortDescription": "Print Speed (A4, ISO): up to 18 / 13 ipm",
+  "location": "H2-222",
+  "printerStatus": true,
+  "permittedFileType": [
+    "pdf",
+    "doc",
+    "docx"
+  ],
+  "__v": 0
+}]

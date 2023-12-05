@@ -1,0 +1,691 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>HCMUT &#8211; Central Authentication Service</title>
+    <style>
+      html,
+      body,
+      div,
+      span,
+      object,
+      iframe,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p,
+      blockquote,
+      pre,
+      abbr,
+      address,
+      cite,
+      code,
+      del,
+      dfn,
+      em,
+      img,
+      ins,
+      kbd,
+      q,
+      samp,
+      small,
+      strong,
+      sub,
+      sup,
+      var,
+      b,
+      i,
+      dl,
+      dt,
+      dd,
+      ol,
+      ul,
+      li,
+      fieldset,
+      form,
+      label,
+      legend,
+      table,
+      caption,
+      tbody,
+      tfoot,
+      thead,
+      tr,
+      th,
+      td,
+      article,
+      aside,
+      canvas,
+      details,
+      figcaption,
+      figure,
+      footer,
+      header,
+      hgroup,
+      menu,
+      nav,
+      section,
+      summary,
+      time,
+      mark,
+      audio,
+      video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: 0;
+        font-size: 100%;
+        vertical-align: baseline;
+        background: transparent;
+        text-align: justify;
+      }
+      body {
+        line-height: 1;
+      }
+
+      article,
+      aside,
+      details,
+      figcaption,
+      figure,
+      footer,
+      header,
+      hgroup,
+      menu,
+      nav,
+      section {
+        display: block;
+      }
+
+      nav ul {
+        list-style: none;
+      }
+
+      blockquote,
+      q {
+        quotes: none;
+      }
+
+      blockquote:before,
+      blockquote:after,
+      q:before,
+      q:after {
+        content: '';
+        content: none;
+      }
+
+      a {
+        margin: 0;
+        padding: 0;
+        font-size: 100%;
+        vertical-align: baseline;
+        background: transparent;
+      }
+
+      /* change colours to suit your needs */
+      ins {
+        background-color: #ff9;
+        color: #000;
+        text-decoration: none;
+      }
+      /* change colours to suit your needs */
+      mark {
+        background-color: #ff9;
+        color: #000;
+        font-style: italic;
+        font-weight: bold;
+      }
+
+      del {
+        text-decoration: line-through;
+      }
+
+      abbr[title],
+      dfn[title] {
+        border-bottom: 1px dotted;
+        cursor: help;
+      }
+
+      table {
+        border-collapse: collapse;
+        border-spacing: 0;
+      }
+
+      /* change border colour to suit your needs */
+      hr {
+        display: block;
+        height: 1px;
+        border: 0;
+        border-top: 1px solid #cccccc;
+        margin: 1em 0;
+        padding: 0;
+      }
+
+      input,
+      select {
+        vertical-align: middle;
+      }
+
+      /* general page */
+      body {
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 13px;
+        line-height: 1.4em;
+      }
+      #cas {
+        background: #eee;
+      }
+      #cas .flc-screenNavigator-view-container {
+        width: 85%;
+        margin: 0 auto;
+      }
+      #cas .flc-screenNavigator-view-container #header,
+      #cas .flc-screenNavigator-view-container #content {
+        background: #fff;
+        -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+      }
+      #cas .flc-screenNavigator-view-container #content {
+        -webkit-border-bottom-right-radius: 4px;
+        -webkit-border-bottom-left-radius: 4px;
+        -moz-border-radius-bottomright: 4px;
+        -moz-border-radius-bottomleft: 4px;
+        border-bottom-right-radius: 4px;
+        border-bottom-left-radius: 4px;
+      }
+      @media only screen and (max-width: 960px) {
+        #cas .flc-screenNavigator-view-container {
+          width: 100%;
+        }
+        #cas .flc-screenNavigator-view-container #content {
+          -webkit-border-bottom-right-radius: 0px;
+          -webkit-border-bottom-left-radius: 0px;
+          -moz-border-radius-bottomright: 0px;
+          -moz-border-radius-bottomleft: 0px;
+          border-bottom-right-radius: 0px;
+          border-bottom-left-radius: 0px;
+        }
+      }
+      /* header */
+      #cas #header {
+        padding-top: 10px;
+      }
+      #cas #header #company-name {
+        width: 118px;
+        height: 31px;
+        text-indent: -999em;
+        background: url(../images/bk-logo.png.html) no-repeat;
+        margin: 0 0 10px 10px;
+      }
+      #cas #header #app-name {
+        background: #210f7a;
+        color: white;
+        padding: 0.4em 0.4em;
+      }
+      #cas #header #app-name > img {
+        display: inline-block;
+        height: 55px;
+      }
+      #cas #header #app-name > h1 {
+        display: inline-block;
+        font-weight: bold;
+        font-size: 2em;
+        margin-left: 20px;
+        margin-top: 20px;
+        vertical-align: top;
+      }
+      #cas #header #app-name #lang {
+        display: inline-block;
+        margin-bottom: 1em;
+        text-align: right;
+      }
+      #cas #content {
+        padding: 10px;
+        overflow: hidden;
+      }
+      #cas #content #msg {
+        padding: 20px;
+        margin-bottom: 10px;
+      }
+      #cas #content #msg h2 {
+        font-size: 1.4em;
+        margin-bottom: 0.5em;
+      }
+      #cas #content #msg.errors {
+        border: 1px dotted #bb0000;
+        color: #bb0000;
+        padding-left: 100px;
+        background: url(../../assets/error.gif) no-repeat 20px center;
+      }
+      #msg.errors {
+        animation-duration: 700ms;
+        animation-name: errorFlash;
+      }
+      #cas #content #msg.success {
+        border: 1px dotted #390;
+        color: #390;
+        padding-left: 100px;
+        background: url(../../assets/confirm.gif) no-repeat 20px center;
+      }
+      #cas #content #msg.info {
+        border: 1px dotted #008;
+        color: #008;
+        padding-left: 100px;
+        background: url(../../assets/info.gif) no-repeat 20px center;
+      }
+      #cas #content #login {
+        width: 420px;
+        float: left;
+        margin-right: 20px;
+      }
+      #cas #content #login #fm1 {
+        padding: 20px;
+        background: #eee;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+      }
+      #cas #content #login #fm1 h2 {
+        font-size: 1.4em;
+        font-weight: bold;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #dddddd;
+        color: #990033;
+      }
+      #cas #content #login #fm1 .row {
+        margin-bottom: 10px;
+      }
+      #cas #content #login #fm1 .row .fl-label {
+        display: block;
+        color: #777777;
+        font-size: 107.692%;
+        font-weight: bold;
+      }
+      #cas #content #login #fm1 .row input[type='text'],
+      #cas #content #login #fm1 .row input[type='password'] {
+        padding: 6px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        border: 1px solid #dddddd;
+        background: #ffffdd;
+        width: 22.5em;
+      }
+      #cas #content #login #fm1 .row.check {
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #dddddd;
+        color: #777;
+        font-size: 12px;
+      }
+      #cas #content #login #fm1 .row .btn-submit,
+      #cas #content #login #fm1 .row .btn-reset {
+        background-color: #006dcc;
+        background-image: -moz-linear-gradient(center top, #0088cc, #0044cc);
+        background-repeat: repeat-x;
+        border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+        color: #ffffff;
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+        border-image: none;
+        border-radius: 4px 4px 4px 4px;
+        border-style: solid;
+        border-width: 1px;
+        box-shadow:
+          0 1px 0 rgba(255, 255, 255, 0.2) inset,
+          0 1px 2px rgba(0, 0, 0, 0.05);
+        cursor: pointer;
+        display: inline-block;
+        font-size: 14px;
+        line-height: 20px;
+        margin-bottom: 0;
+        padding: 4px 14px;
+        text-align: center;
+        vertical-align: middle;
+      }
+      #cas #content #login #fm1 .row.support {
+        margin-bottom: 0px;
+      }
+      #cas #content #login #fm1 .row.support ul {
+        list-style: none;
+      }
+      #cas #content #login #fm1 .row.support ul li {
+        display: inline-block;
+        padding: 0px 10px;
+        border-right: 1px solid #e2e2e2;
+      }
+
+      #cas #content #login #fm1 .row.support .first {
+        padding: 0px 0px;
+        padding-right: 10px;
+      }
+      #cas #content #login #fm1 .row.support ul li:last-child {
+        border: 0;
+        line-height: 1.4em;
+      }
+      #cas #content #login #fm1 .row .btn-submit:hover,
+      #cas #content #login #fm1 .row .btn-reset:hover {
+        cursor: pointer;
+      }
+      #cas #content #sidebar {
+        width: auto;
+      }
+      #cas #content #sidebar .sidebar-content {
+        padding-left: 20px;
+      }
+      #cas #content #sidebar .sidebar-content p {
+        margin-bottom: 0.3em;
+        margin-left: 430px;
+        margin-right: 25px;
+      }
+      #cas #content #sidebar .sidebar-content h3 {
+        font-size: 1.2em;
+        font-weight: bold;
+        color: #990033;
+        margin-top: 1.2em;
+      }
+      #cas #content #sidebar .sidebar-content ul {
+        list-style: none;
+      }
+      #cas #content #sidebar .sidebar-content ul li {
+        display: inline-block;
+        padding: 0px 10px;
+        border-right: 1px solid #e2e2e2;
+      }
+      #cas #content #sidebar .sidebar-content ul li:last-child {
+        border: 0;
+        line-height: 1.4em;
+      }
+      #cas #footer {
+        color: #999;
+        margin: 20px 0;
+      }
+      @media only screen and (max-width: 960px) {
+        #cas #footer {
+          padding-left: 10px;
+        }
+      }
+      @keyframes errorFlash {
+        from {
+          background-color: rgb(187, 0, 0);
+        }
+        to {
+          background-color: rgb(255, 238, 221);
+        }
+      }
+    </style>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="icon" href="../../assets/hcmut.png" type="image/x-icon" />
+    <!-- <script defer src="../../dist/index.bundle.js"></script> -->
+    <!-- <script defer src="../../dist/home.bundle.js"></script> -->
+    <script defer src="../../dist/login.bundle.js"></script>
+    <!-- <script defer src="../../dist/manage.bundle.js"></script> -->
+    <!-- <script defer src="../../dist/buy.bundle.js"></script> -->
+    <!-- <script defer src="../../dist/history.bundle.js"></script> -->
+    <!-- <script defer src="../../dist/queue.bundle.js"></script> -->
+    <!-- <script defer src="../../dist/report.bundle.js"></script> -->
+    <script defer src="../../dist/vendors.bundle.js"></script>
+  </head>
+  <body id="cas" class="fl-theme-iphone">
+    <div class="flc-screenNavigator-view-container">
+      <div class="fl-screenNavigator-view">
+        <div id="header" class="flc-screenNavigator-navbar fl-navbar fl-table">
+          <div id="app-name" class="fl-table-cell">
+            <img alt="BK" src="../../assets/hcmut-md.png" />
+            <h1>Central Authentication Service</h1>
+          </div>
+        </div>
+        <div id="content" class="fl-screenNavigator-scroll-container">
+          <div class="box fl-panel" id="login">
+            <form id="fm1" class="fm-v clearfix">
+              <!-- <div id="msg" class="errors">
+                Please fill in all of the required fields!
+              </div> -->
+              <!-- Congratulations on bringing CAS online!  The default authentication handler authenticates where usernames equal passwords: go ahead, try it out. -->
+              <h2>Enter your Username and Password</h2>
+              <div class="row fl-controls-left">
+                <label for="username" class="fl-label"
+                  ><span class="accesskey">U</span>sername</label
+                >
+                <input
+                  id="username"
+                  name="username"
+                  class="required"
+                  tabindex="1"
+                  accesskey="u"
+                  type="text"
+                  value=""
+                  autocomplete="false"
+                />
+              </div>
+              <div class="row fl-controls-left">
+                <label for="password" class="fl-label"
+                  ><span class="accesskey">P</span>assword</label
+                >
+                <input
+                  id="password"
+                  name="password"
+                  class="required"
+                  tabindex="2"
+                  accesskey="p"
+                  type="password"
+                  value=""
+                  autocomplete="off"
+                />
+              </div>
+              <div class="row check">
+                <input
+                  id="warn"
+                  name="warn"
+                  value="true"
+                  tabindex="3"
+                  accesskey="w"
+                  type="checkbox"
+                />
+                <label for="warn"
+                  ><span class="accesskey">W</span>arn me before logging me into
+                  other sites.</label
+                >
+              </div>
+              <div class="row btn-row">
+                <input
+                  type="hidden"
+                  name="lt"
+                  value="LT-10752312-mBYfLtwHHi0pOCwg23mdZCfCzs5Q3h"
+                />
+                <input type="hidden" name="execution" value="e1s1" />
+                <input type="hidden" name="_eventId" value="submit" />
+                <input
+                  class="btn-submit"
+                  name="submitButton"
+                  accesskey="l"
+                  value="Login"
+                  tabindex="4"
+                  type="submit"
+                />
+                <input
+                  class="btn-reset"
+                  name="resetButton"
+                  accesskey="c"
+                  value="Clear"
+                  tabindex="5"
+                  type="reset"
+                />
+              </div>
+              <div class="row support">
+                <ul>
+                  <li class="first">
+                    <a href="https://account.hcmut.edu.vn/">Change password?</a>
+                  </li>
+                </ul>
+              </div>
+            </form>
+          </div>
+          <div id="sidebar">
+            <div class="sidebar-content">
+              <div id="list-languages" class="fl-panel">
+                <h3>Languages</h3>
+
+                <ul>
+                  <li class="first">
+                    <a href="https://sso.hcmut.edu.vn/cas/login?locale=vi"
+                      >Vietnamese</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://sso.hcmut.edu.vn/cas/login?locale=en"
+                      >English
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div id="list-notes" class="fl-panel">
+                <h3>Please note</h3>
+                <p class="fl-panel fl-note fl-bevel-white fl-font-size-80">
+                  The Login page enables single sign-on to multiple websites at
+                  HCMUT. This means that you only have to enter your user name
+                  and password once for websites that subscribe to the Login
+                  page.
+                </p>
+                <p class="fl-panel fl-note fl-bevel-white fl-font-size-80">
+                  You will need to use your HCMUT Username and password to login
+                  to this site. The "HCMUT" account provides access to many
+                  resources including the HCMUT Information System, e-mail, ...
+                </p>
+                <p class="fl-panel fl-note fl-bevel-white fl-font-size-80">
+                  For security reasons, please Exit your web browser when you
+                  are done accessing services that require authentication!
+                </p>
+              </div>
+
+              <div id="list-supports" class="fl-panel">
+                <h3>Technical support</h3>
+                <ul>
+                  <li class="first">
+                    E-mail:
+                    <a href="mailto:support@hcmut.edu.vn"
+                      >support@hcmut.edu.vn</a
+                    >
+                  </li>
+                  <li>Tel: (84-8) 38647256 - 5200</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          id="footer"
+          class="fl-panel fl-note fl-bevel-white fl-font-size-80"
+        >
+          <a
+            id="hcmut"
+            href="http://www.hcmut.edu.vn"
+            title="go to HCMUT home page"
+          ></a>
+          <div id="copyright">
+            <p>
+              Copyright &copy; 2011 - 2012 Ho Chi Minh University of Technology.
+              All rights reserved.
+            </p>
+            <p>
+              Powered by <a href="http://www.jasig.org/cas">Jasig CAS 3.5.1</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"
+      integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      /*
+       * Licensed to Jasig under one or more contributor license
+       * agreements. See the NOTICE file distributed with this work
+       * for additional information regarding copyright ownership.
+       * Jasig licenses this file to you under the Apache License,
+       * Version 2.0 (the "License"); you may not use this file
+       * except in compliance with the License.  You may obtain a
+       * copy of the License at the following location:
+       *
+       *   http://www.apache.org/licenses/LICENSE-2.0
+       *
+       * Unless required by applicable law or agreed to in writing,
+       * software distributed under the License is distributed on an
+       * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+       * KIND, either express or implied.  See the License for the
+       * specific language governing permissions and limitations
+       * under the License.
+       */
+
+      var editInnerHTML = '';
+      var deleteInnerHTML = '';
+      var currentRow = null;
+
+      function swapButtonsForConfirm(rowId, serviceId) {
+        resetOldValue();
+        var editCell = $('#edit' + rowId);
+        var deleteCell = $('#delete' + rowId);
+
+        var row = $('#row' + rowId);
+        row.removeClass('over');
+        row.addClass('highlightBottom');
+
+        editInnerHTML = editCell.html();
+        deleteInnerHTML = deleteCell.html();
+        currentRow = rowId;
+
+        editCell.html('Really?');
+        deleteCell.html(
+          '<a id="yes" href="deleteRegisteredService.html?id=' +
+            serviceId +
+            '">Yes</a> <a id="no" href="#" onclick="resetOldValue();return false;">No</a>',
+        );
+      }
+
+      function resetOldValue() {
+        if (currentRow != null) {
+          var curRow = $('#row' + currentRow);
+          curRow.removeClass('over');
+          curRow.removeClass('highlightBottom');
+          var editCell = $('#edit' + currentRow);
+          var deleteCell = $('#delete' + currentRow);
+
+          editCell.html(editInnerHTML);
+          deleteCell.html(deleteInnerHTML);
+
+          editInnerHTML = null;
+          deleteInnerHTML = null;
+          currentRow = null;
+        }
+      }
+
+      $(document).ready(function () {
+        //focus username field
+        $('input:visible:enabled:first').focus();
+        //flash error box
+        $('#msg.errors')
+          .animate({ backgroundColor: 'rgb(187,0,0)' }, 30)
+          .animate({ backgroundColor: 'rgb(255,238,221)' }, 500);
+
+        //flash success box
+        $('#msg.success')
+          .animate({ backgroundColor: 'rgb(51,204,0)' }, 30)
+          .animate({ backgroundColor: 'rgb(221,255,170)' }, 500);
+
+        if (!window.console || window.console == {}) {
+          window.console.log = function () {};
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+[{
+  "_id": {
+    "$oid": "656da536aff97f83806bb2ca"
+  },
+  "printer": {
+    "$oid": "656da536aff97f83806bb2c8"
+  },
+  "printOrders": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "656da557aff97f83806bb2d1"
+  },
+  "printer": {
+    "$oid": "656da557aff97f83806bb2cf"
+  },
+  "printOrders": [],
+  "__v": 0
+}]
